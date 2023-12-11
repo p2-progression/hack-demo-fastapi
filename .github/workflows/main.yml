@@ -18,8 +18,8 @@ jobs:
           port: ${{secrets.SSH_PORT}}
           script: |
             cd /home/ubuntu/hack-demo-fastapi
+            git pull origin main
             touch .env
             echo "FOO=${{ secrets.FOO }}" >> .env
-            git pull origin main
             docker compose down
             docker compose up -d
