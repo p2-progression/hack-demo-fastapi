@@ -19,6 +19,7 @@ jobs:
           script: |
             cd /home/ubuntu/hack-demo-fastapi
             git pull origin main
+            rm .env
             touch .env
             echo "${{ secrets.ENV_FILE }}" > .env
             docker compose down
